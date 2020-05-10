@@ -17,9 +17,27 @@ store.dogs.forEach(dog => pets.dogs.enqueue(dog));
 module.exports = {
   get() {
     // Return the pets next in line to be adopted.
+    const cat = pets.cats.show();
+    const dog = pets.dogs.show();
+    return [cat, dog];
+  },
+
+  getAllPets() {
+    // Return all pets up for adoption
+    const cats = pets.cats.all();
+    const dogs = pets.dogs.all();
+    return {
+      cats,
+      dogs
+    };
   },
 
   dequeue(type) {
     // Remove a pet from the queue.
+    if(type === 'cats') {
+      return pets.cats.dequeue();
+    } else if(type === 'dogs') {
+      return pets.dogs.dequeue();
+    }
   }
 };
