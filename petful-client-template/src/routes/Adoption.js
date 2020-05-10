@@ -82,7 +82,7 @@ function Adoption() {
         let type = randomType()
         handleAdoption(type)
         counter++
-      })
+      }, 5000)
     }
   }
 
@@ -102,7 +102,7 @@ function Adoption() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({name})
+      body: JSON.stringify(name)
     })
       .then(res =>
         (!res.ok)
@@ -110,7 +110,7 @@ function Adoption() {
           : res.json()
       )
       setQueue(queue.concat(person))
-      startQueue()
+      // startQueue()
   }
 
   const renderButtons = (type) => {
@@ -129,7 +129,7 @@ function Adoption() {
 
   const generateWaitList = () => {
     return queue.map(person => (
-      <li>{person}</li>
+      <li key={person}>{person}</li>
     ))
   }
 
@@ -165,7 +165,7 @@ function Adoption() {
                 id='adopter-name'
                 autoComplete='off'
                 type='text'
-                value={name}
+                value={value}
                 onChange={event => setValue(event.target.value)}
               />
               <button
