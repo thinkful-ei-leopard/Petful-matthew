@@ -34,10 +34,12 @@ module.exports = {
 
   dequeue(type) {
     // Remove a pet from the queue.
-    if(type === 'cats') {
+    if(type === 'cat') {
       return pets.cats.dequeue();
-    } else if(type === 'dogs') {
+    } else if(type === 'dog') {
       return pets.dogs.dequeue();
+    } else {
+      throw new Error('Invalid pet type');
     }
   }
 };

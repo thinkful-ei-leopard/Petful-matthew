@@ -13,13 +13,20 @@ router.get('/', (req, res) => {
 
 router.delete('/', json, (req, res) => {
   // Remove a pet from adoption.
-  const { type } = req.body;
+  const { type } = req.query;
+
+  const person = People.dequeue();
+
+  if(person === null) {
+    return res.status(400).json({
+      error: 'There is no one in the queue'    
+    });
+  }
 
   // check if type is specified, if not then dequeue both types of pets
   if(!type) {
-    const cat = Pets.dequeue('cats');
+    const cat = Pets.dequeue('cat');
     const dog = Pets.dequeue('dog');
-    const person = People.dequeue();
     return res.json({ cat, dog, person });
   }
 
@@ -31,17 +38,15 @@ router.delete('/', json, (req, res) => {
   }
 
   // make sure type is either cats or dogs
-  if(type.toLowerCase() !== 'cats' && type.toLowerCase() !== 'dogs') {
+  if(type.toLowerCase() !== 'cat' && type.toLowerCase() !== 'dog') {
     return res.status(400).json({
-      error: '`type` must be either `cats` or `dogs`'
+      error: '`type` must be either `cat` or `dog`'
     });
   }
 
   // all checks have passed
   const pet = Pets.dequeue(type);
-  const person = People.dequeue();
-
-  return res.json({ pet, person });
+  return res.json({ [type]: pet, person });
 });
 
 module.exports = router;
