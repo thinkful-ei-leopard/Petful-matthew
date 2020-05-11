@@ -12,22 +12,23 @@ router.get('/', (req, res) => {
 
 router.post('/', json, (req, res) => {
   // Add a new person to the queue.
-  const { person } = req.body;
+  const { name } = req.body;
 
-  if(!person) {
+  if(!name) {
     return res.status(400).json({
       error: 'Invalid `name`'
     });
   }
-  if(typeof person !== 'string') {
+  
+  if(typeof name !== 'string') {
     return res.status(400).json({
       error: '`name` must be a string'
     });
   }
 
-  People.enqueue(person);
+  People.enqueue(name);
 
-  return res.status(201).json({ person });
+  return res.status(201).json({ name });
 });
 
 module.exports = router;
