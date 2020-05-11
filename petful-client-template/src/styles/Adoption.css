@@ -1,0 +1,236 @@
+.nav-bar {
+  width: 100%;
+  height: 50px;
+  background-color: #00ffbb;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  border: 2px solid #222;
+  border-radius: 1rem;
+}
+
+.petful-header {
+  color: #222;
+}
+
+.home-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.pets-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 2rem;
+  bottom: 0;
+  margin-top: 4rem;
+}
+
+@media (min-width: 1200px) {
+  .pets-container{
+    margin-top: 0;
+  }
+}
+
+.cat-info,
+.dog-info {
+  width: 300px;
+  position: block;
+}
+
+.cat-info p,
+.dog-info p {
+  text-align: left;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  width: 100%;
+}
+
+.available-cat-image,
+.available-dog-image {
+  width: 100%;
+  border: 2px solid #222;
+  margin-bottom: 1rem;
+}
+
+.cats-container,
+.dogs-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .pets-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .intro-text {
+    width: 50%;
+  }
+
+  .adopt-button.both {
+    margin: 0 -4rem;
+  }
+}
+
+.cats-header,
+.dogs-header {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: #222;
+  margin: 0;
+}
+
+.user-list {
+  margin: 0 auto 2rem;
+  display: flex;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0;
+}
+
+.waitlist {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  z-index: 2;
+  border: 2px solid #222;
+  border-radius: 1rem;
+  background-color: #00ffbb;
+  width: 80%;
+  margin: auto auto;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.waitlist-header {
+  font-size: 1rem;
+  margin: 0 auto 1rem;
+  text-decoration: underline;
+}
+
+.waitlist-form-container {
+  display: flex;
+  padding-bottom: 1rem;
+  position: relative;
+  justify-content: center;
+}
+
+.waitlist-form {
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  bottom: 0;
+  height: 50px;
+  margin: 0 auto;
+}
+
+label {
+  padding-bottom: 1rem;
+}
+
+input {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Adoption__recent {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  z-index: 2;
+  border: 2px solid #222;
+  border-radius: 1rem;
+  background-color: #00ffbb;
+  width: 80%;
+  margin: auto auto;
+  padding: 0 1rem;
+}
+
+.intro-text {
+  border: 2px solid #222;
+  border-radius: 2rem;
+  background-color: #00ffbb;
+  padding: 1.5rem;
+  font-size: 1rem;
+  margin: 2rem auto;
+  width: 80%;
+  line-height: 1.5rem;
+}
+
+.adopt-button {
+  text-align: center;
+  background-color: #ce40c2;
+  text-decoration: none;
+  margin: 2rem 1rem;
+  display: block;
+  width: 200px;
+  padding: 1rem;
+  font-size: 1rem;
+  transition: color 0.2s;
+  border: 2px solid #222;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 1rem;
+  color: #fff;
+}
+
+.adopt-button.both {
+  text-align: center;
+  display: block;
+}
+
+.adopt-button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.center-both {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  position: relative;
+}
+
+main span {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 770px) {
+  .Adoption {
+    max-width: 770px;
+    margin: auto auto;
+  }
+}

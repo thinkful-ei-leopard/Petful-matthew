@@ -1,0 +1,80 @@
+body {
+  font-family: Roboto Mono;
+}
+
+.Landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  border: 1px solid #222;
+  border-radius: 1rem;
+}
+
+.Landing__header {
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  color: #222;
+  background-color: #00ffbb;
+  padding: 0.2rem 1.5rem;
+  border: 2px solid #222;
+  border-radius: 1rem;
+}
+
+.Landing__image {
+  width: 250px;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+
+.Landing__text {
+  border: 2px solid #222;
+  border-radius: 2rem;
+  background-color: #00ffbb;
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: #222;
+  margin: 0 auto;
+}
+
+.Landing__text-special {
+  font-style: italic;
+  color: #ce40c2;
+}
+
+.Landing__button {
+  text-align: center;
+  background-color: #ce40c2;
+  text-decoration: none;
+  margin: 2rem 1rem;
+  display: block;
+  width: 200px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.2s;
+  border: 2px solid #222;
+  color: #fff;
+  border-radius: 1rem;
+  text-transform: uppercase;
+}
+
+.Landing__button:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+@media screen and (min-width: 770px) {
+  .Landing {
+    max-width: 770px;
+    margin: auto auto;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .Landing__image {
+    width: 400px;
+  }
+} 

@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import landingImage from '../images/landing-image.jpg'
 
+import '../styles/Landing.css'
+
 function Landing() {
   return (
     <section className='Landing'>
@@ -11,8 +13,8 @@ function Landing() {
         src={landingImage}
         alt='A dog and a cat'
       />
-      <p>
-        We operate on a <span className='Landing__p-special'>first-come, first-served</span> basis. If
+      <p className='Landing__text'>
+        We operate on a <span className='Landing__text-special'>first-come, first-served</span> basis. If
         you would like to adopt one of our adorable pets, click the button below and join the adoption queue!
         Cats and dogs who have been here the longest will be the first abailable for adoption.
       </p>
