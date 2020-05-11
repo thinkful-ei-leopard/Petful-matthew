@@ -1,6 +1,6 @@
 # Petful
 
-Live: https://the-petful-app.now.sh/
+Live: 
 
 ## Summary
 Petful is a website that simulates a pet adoption system for an animal shelter. There are two types of animals: cats and dogs. 
