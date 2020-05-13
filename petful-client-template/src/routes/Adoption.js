@@ -265,14 +265,14 @@ export class Adoption extends Component {
                   </p>
                 </div>
                 <div className="center">
-                  {this.renderButtons('cat', false, 'Me')}
+                  {this.renderButtons('cat')}
                 </div>
               </div>
             )}
           </section>
 
           <div className="center-both">
-            {this.renderButtons('', true, 'Both')}
+            {this.renderButtons(null)}
           </div>
 
           <section className="dogs-container">
@@ -304,7 +304,7 @@ export class Adoption extends Component {
                   </p>
                 </div>
                 <div className="center">
-                  {this.renderButtons('dog', false, 'Me')}
+                  {this.renderButtons('dog')}
                 </div>
               </div>
             )}
