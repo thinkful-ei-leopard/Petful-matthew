@@ -82,8 +82,7 @@ export class Adoption extends Component {
 
   randomPet = () => {
     const pets = ['dog', 'cat', null];
-    let randomNum = Math.round(Math.random());
-    return pets[randomNum];
+    return pets[Math.floor(Math.random() * pets.length)];
   };
 
   startQueue = (e) => {
@@ -92,15 +91,21 @@ export class Adoption extends Component {
     if (name !== people[0]) {
       return setInterval(() => {
         const { name, people } = this.state;
-        let randomPet = this.randomPet();
-        let fakePerson = fakePeople[counter];
         if (name === people[0]) {
-          clearInterval();
-          return;
+          if(people.length >= 6) {
+            clearInterval();
+            return;
+          } else {
+            var fakePerson = fakePeople[Math.floor(Math.random() * fakePeople.length)];
+            this.handleSignUp(e, fakePerson);
+          }
+        } else {
+          let randomPet = this.randomPet();
+          let fakePerson = fakePeople[counter];
+          this.handleAdopt(randomPet);
+          this.handleSignUp(e, fakePerson);
         }
-        this.handleAdopt(randomPet, false);
-        this.handleSignUp(e, fakePerson);
-        counter < 10 ? counter++ : (counter = 0);
+        counter < people ? counter++ : (counter = 0);
       }, 5000);
     } else {
       clearInterval();
@@ -146,7 +151,7 @@ export class Adoption extends Component {
     alert('congrats! you have made a successful adoption!');
   };
 
-  renderButtons = (type, both, who) => {
+  renderButtons = (type) => {
     const { name, people } = this.state;
     if (name === people[0]) {
       return (
@@ -154,10 +159,10 @@ export class Adoption extends Component {
           className="adopt-button"
           type="submit"
           onClick={() => {
-            this.handleAdopt(type, both);
+            this.handleAdopt(type);
             this.notifySuccess();
           }}>
-          Adopt {who}!
+          Adopt {type === null ? 'Both' : 'Me'}!
         </button>
       );
     }
@@ -260,7 +265,7 @@ export class Adoption extends Component {
                   </p>
                 </div>
                 <div className="center">
-                  {this.renderButtons('cats', false, 'Me')}
+                  {this.renderButtons('cat', false, 'Me')}
                 </div>
               </div>
             )}
@@ -299,7 +304,7 @@ export class Adoption extends Component {
                   </p>
                 </div>
                 <div className="center">
-                  {this.renderButtons('dogs', false, 'Me')}
+                  {this.renderButtons('dog', false, 'Me')}
                 </div>
               </div>
             )}
